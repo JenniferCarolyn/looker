@@ -25,14 +25,18 @@ persist_with: cirque_du_soleil_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
+explore: orders {
+  join: shows_capacity {
+    type: left_outer
+    sql_on: ${orders.show_date} = ${shows_capacity.show_date} ;;
+    relationship: many_to_one
+  }
+}
+
 explore: other_shows_sales {
 
 }
 
 explore: shows_capacity {
-
-}
-
-explore: orders {
 
 }
