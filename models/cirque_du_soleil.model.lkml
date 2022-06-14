@@ -29,7 +29,7 @@ explore: orders {
   join: shows_capacity {
     type: left_outer
     sql_on: ${orders.show_date} = ${shows_capacity.show_date} ;;
-    relationship: many_to_one
+    relationship: many_to_many
   }
 }
 
