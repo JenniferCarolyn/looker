@@ -28,7 +28,7 @@ persist_with: cirque_du_soleil_default_datagroup
 explore: orders {
   join: shows_capacity {
     type: left_outer
-    sql_on: ${orders.show_date} = ${shows_capacity.show_date} ;;
+    sql_on: ${orders.show_date} = ${shows_capacity.show_date} AND ${orders.ticket_type} = ${shows_capacity.ticket_type} ;;
     relationship: many_to_many
   }
 }
